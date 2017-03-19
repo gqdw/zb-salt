@@ -26,3 +26,8 @@ enable-zabbix-agent:
     - enable: True
     - require:
       - file: zabbix-agent-config
+
+open-firewall:
+  win_firewall.add_rule:
+    - name: zabbix agent
+      localport: 10050
